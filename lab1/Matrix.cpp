@@ -77,7 +77,7 @@ vector<int> Matrix::getAllElements() const {
 	return elements;
 }
 
-vector<int> Matrix::Matr_Intersection(Matrix& matr1, Matrix& matr2) {
+vector<int> Matrix::Matr_Intersection(const Matrix& matr1, const Matrix& matr2) {
 	vector<int> elements1 = matr1.getAllElements();
 	vector<int> elements2 = matr2.getAllElements();
 
@@ -96,7 +96,7 @@ vector<int> Matrix::Matr_Intersection(Matrix& matr1, Matrix& matr2) {
 	return intersection;
 }
 
-vector<int> Matrix::Matr_Union(Matrix& matr1, Matrix& matr2) {
+vector<int> Matrix::Matr_Union(const Matrix& matr1, const Matrix& matr2) {
 	vector<int> elements1 = matr1.getAllElements();
 	vector<int> elements2 = matr2.getAllElements();
 
