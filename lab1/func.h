@@ -2,4 +2,4 @@
 void waitAndClear();
 void displayMenu();
 void clearScreen();
-void printVector(vector<int>& vec, string const title);
+void printVector(const vector<int>& vec, const string&  title);
