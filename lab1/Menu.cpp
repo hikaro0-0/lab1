@@ -46,7 +46,8 @@ void menu() {
 			cin >> rows >> cols;
 			matr2 = new Matrix(rows, cols);
 
-			int minVal, maxVal;
+			int minVal;
+			int maxVal;
 			cout << "¬ведите минимальное значение: ";
 			cin >> minVal;
 			cout << "¬ведите максимальное значение: ";
