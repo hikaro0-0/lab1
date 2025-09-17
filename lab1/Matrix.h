@@ -17,7 +17,7 @@ class Matrix {
 
 public:
 	Matrix(int r, int c);
-	Matrix(const Matrix& other);
+	//Matrix(const Matrix& other);
 	~Matrix();
 	void fillMatrixManual();
 	void fillMatrixAuto(int minVal = 0, int maxVal = 100);
