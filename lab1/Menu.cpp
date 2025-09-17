@@ -52,7 +52,10 @@ void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill) {
     if (matr1 != nullptr) delete matr1;
     if (matr2 != nullptr) delete matr2;
 
-    int rows1, cols1, rows2, cols2;
+    int rows1;
+    int cols1;
+    int rows2;
+    int cols2;
 
     cout << "¬ведите размер первой матрицы (строки столбцы): ";
     cin >> rows1 >> cols1;
