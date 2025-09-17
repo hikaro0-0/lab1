@@ -2,13 +2,14 @@
 #define MATRIX_H
 
 #include <iostream>
+#include <string>
 #include <vector>
 #include <algorithm>
 #include <set>
 #include <locale>
 #include <random>
 
-using namespace std;
+//using namespace std;
 
 class Matrix {
     int rows;
@@ -26,9 +27,9 @@ public:
     void fillMatrixManual();
     void fillMatrixAuto(int minVal = 0, int maxVal = 100);
     void printMatrix() const;
-    vector<int> getAllElements() const;
-    static vector<int> Matr_Intersection(const Matrix& matr1, const Matrix& matr2);
-    static vector<int> Matr_Union(const Matrix& matr1, const Matrix& matr2);
+    std::vector<int> getAllElements() const;
+    static std::vector<int> Matr_Intersection(const Matrix& matr1, const Matrix& matr2);
+    static std::vector<int> Matr_Union(const Matrix& matr1, const Matrix& matr2);
     int getRows() const { return rows; }
     int getCols() const { return cols; }
     int getElement(int i, int j) const { return data[i][j]; }
@@ -40,7 +41,7 @@ private:
 };
 
 void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill);
-void handleMatrixDisplay(Matrix* matr1, Matrix* matr2);
-void handleMatrixOperation(Matrix* matr1, Matrix* matr2, const string& operation);
-
+void handleMatrixDisplay(const Matrix* matr1, const Matrix* matr2);
+void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, const std::string& operation);
+void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, const char* operation);
 #endif

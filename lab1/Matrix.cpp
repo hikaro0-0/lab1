@@ -85,21 +85,21 @@ void Matrix::copyFrom(const Matrix& other) {
 }
 
 void Matrix::fillMatrixManual() {
-    cout << "Заполните массив:" << rows << "x" << cols << endl;
+    std::cout << "Заполните массив:" << rows << "x" << cols << std::endl;
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++)
         {
-            cout << "Элемент [" << i << "][" << j << "]:";
-            cin >> data[i][j];
+            std::cout << "Элемент [" << i << "][" << j << "]:";
+            std::cin >> data[i][j];
         }
     }
 }
 
 void Matrix::fillMatrixAuto(int minVal, int maxVal) {
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<int> dist(minVal, maxVal);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> dist(minVal, maxVal);
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
@@ -113,14 +113,14 @@ void Matrix::printMatrix() const {
     {
         for (int j = 0; j < cols; j++)
         {
-            cout << data[i][j] << " ";
+            std::cout << data[i][j] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 
-vector<int> Matrix::getAllElements() const {
-    vector<int> elements;
+std::vector<int> Matrix::getAllElements() const {
+    std::vector<int> elements;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++)
         {
@@ -130,14 +130,14 @@ vector<int> Matrix::getAllElements() const {
     return elements;
 }
 
-vector<int> Matrix::Matr_Intersection(const Matrix& matr1, const Matrix& matr2) {
-    vector<int> elements1 = matr1.getAllElements();
-    vector<int> elements2 = matr2.getAllElements();
+std::vector<int> Matrix::Matr_Intersection(const Matrix& matr1, const Matrix& matr2) {
+    std::vector<int> elements1 = matr1.getAllElements();
+    std::vector<int> elements2 = matr2.getAllElements();
 
-    set<int> set1(elements1.begin(), elements1.end());
-    set<int> set2(elements2.begin(), elements2.end());
+    std::set<int> set1(elements1.begin(), elements1.end());
+    std::set<int> set2(elements2.begin(), elements2.end());
 
-    vector<int> intersection;
+    std::vector<int> intersection;
 
     for (int num : set1)
     {
@@ -149,15 +149,15 @@ vector<int> Matrix::Matr_Intersection(const Matrix& matr1, const Matrix& matr2) 
     return intersection;
 }
 
-vector<int> Matrix::Matr_Union(const Matrix& matr1, const Matrix& matr2) {
-    vector<int> elements1 = matr1.getAllElements();
-    vector<int> elements2 = matr2.getAllElements();
+std::vector<int> Matrix::Matr_Union(const Matrix& matr1, const Matrix& matr2) {
+    std::vector<int> elements1 = matr1.getAllElements();
+    std::vector<int> elements2 = matr2.getAllElements();
 
-    set<int> unionSet(elements1.begin(), elements1.end());
+    std::set<int> unionSet(elements1.begin(), elements1.end());
 
     unionSet.insert(elements2.begin(), elements2.end());
 
-    vector<int> unionVec(unionSet.begin(), unionSet.end());
+    std::vector<int> unionVec(unionSet.begin(), unionSet.end());
 
     return unionVec;
 }

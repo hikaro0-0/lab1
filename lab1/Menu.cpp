@@ -9,7 +9,7 @@ void menu() {
     Matrix* matr2 = nullptr;
     do {
         displayMenu();
-        cin >> choice;
+        std::cin >> choice;
 
         switch (choice) {
         case 1:
@@ -33,11 +33,11 @@ void menu() {
             break;
 
         case 6:
-            cout << "Выход из программы..." << endl;
+            std::cout << "Выход из программы..." << std::endl;
             break;
 
         default:
-            cout << "Неверный выбор! Попробуйте снова." << endl;
+            std::cout << "Неверный выбор! Попробуйте снова." << std::endl;
             waitAndClear();
             break;
         }
@@ -57,30 +57,30 @@ void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill) {
     int rows2;
     int cols2;
 
-    cout << "Введите размер первой матрицы (строки столбцы): ";
-    cin >> rows1 >> cols1;
+    std::cout << "Введите размер первой матрицы (строки столбцы): ";
+    std::cin >> rows1 >> cols1;
     matr1 = new Matrix(rows1, cols1);
 
-    cout << "Введите размер второй матрицы (строки столбцы): ";
-    cin >> rows2 >> cols2;
+    std::cout << "Введите размер второй матрицы (строки столбцы): ";
+    std::cin >> rows2 >> cols2;
     matr2 = new Matrix(rows2, cols2);
 
     if (autoFill) {
         int minVal;
         int maxVal;
-        cout << "Введите минимальное значение: ";
-        cin >> minVal;
-        cout << "Введите максимальное значение: ";
-        cin >> maxVal;
+        std::cout << "Введите минимальное значение: ";
+        std::cin >> minVal;
+        std::cout << "Введите максимальное значение: ";
+        std::cin >> maxVal;
 
         matr1->fillMatrixAuto(minVal, maxVal);
         matr2->fillMatrixAuto(minVal, maxVal);
-        cout << "Матрицы успешно созданы автоматически!" << endl;
+        std::cout << "Матрицы успешно созданы автоматически!" << std::endl;
     }
     else {
         matr1->fillMatrixManual();
         matr2->fillMatrixManual();
-        cout << "Матрицы успешно созданы!" << endl;
+        std::cout << "Матрицы успешно созданы!" << std::endl;
     }
 
     waitAndClear();
@@ -88,23 +88,23 @@ void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill) {
 
 void handleMatrixDisplay(const Matrix* matr1, const Matrix* matr2) {
     if (matr1 != nullptr && matr2 != nullptr) {
-        cout << "Первая матрица:" << endl;
+        std::cout << "Первая матрица:" << std::endl;
         matr1->printMatrix();
-        cout << "Вторая матрица: " << endl;
+        std::cout << "Вторая матрица: " << std::endl;
         matr2->printMatrix();
-        cout << "Нажмите Enter для возврата в меню...";
-        cin.ignore();
-        cin.get();
+        std::cout << "Нажмите Enter для возврата в меню...";
+        std::cin.ignore();
+        std::cin.get();
     }
     else {
-        cout << "Матрицы не созданы! Сначала выберите опцию 1 или 2." << endl;
+        std::cout << "Матрицы не созданы! Сначала выберите опцию 1 или 2." << std::endl;
         waitAndClear();
     }
 }
 
-void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, string& operation) {
+void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, const std::string& operation) {
     if (matr1 != nullptr && matr2 != nullptr) {
-        vector<int> result;
+        std::vector<int> result;
         if (operation == "intersection") {
             result = Matrix::Matr_Intersection(*matr1, *matr2);
             printVector(result, "Пересечение элементов");
@@ -116,7 +116,11 @@ void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, string& ope
         waitAndClear();
     }
     else {
-        cout << "Матрицы не созданы! Сначала выберите опцию 1 или 2." << endl;
+        std::cout << "Матрицы не созданы! Сначала выберите опцию 1 или 2." << std::endl;
         waitAndClear();
     }
+}
+
+void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, const char* operation) {
+    handleMatrixOperation(matr1, matr2, std::string(operation));
 }

@@ -5,35 +5,35 @@ void clearScreen() {
 }
 
 void waitAndClear() {
-	cout << "Нажмите Enter для продолжения...";
-	cin.ignore();
-	cin.get();
+	std::cout << "Нажмите Enter для продолжения...";
+	std::cin.ignore();
+	std::cin.get();
 	clearScreen();
 }
 
-void printVector(const vector<int>& vec, const string& title) {
-	cout << title << ": ";
+void printVector(const std::vector<int>& vec, const std::string& title) {
+	std::cout << title << ": ";
 	if (vec.empty()) {
-		cout << "Пусто";
+		std::cout << "Пусто";
 	}
 	else {
 		for (int num : vec) {
-			cout << num << " ";
+			std::cout << num << " ";
 		}
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 
 void displayMenu() {
-	cout << "====================================" << endl;
-	cout << "          МЕНЮ ПРОГРАММЫ" << endl;
-	cout << "====================================" << endl;
-	cout << "1. Ручной ввод матриц" << endl;
-	cout << "2. Автоматический ввод матриц" << endl;
-	cout << "3. Показать матрицы" << endl;
-	cout << "4. Найти пересечение элементов" << endl;
-	cout << "5. Найти объединение элементов" << endl;
-	cout << "6. Выход" << endl;
-	cout << "====================================" << endl;
-	cout << "Выберите опцию: ";
+	std::cout << "====================================" << std::endl;
+	std::cout << "          МЕНЮ ПРОГРАММЫ" << std::endl;
+	std::cout << "====================================" << std::endl;
+	std::cout << "1. Ручной ввод матриц" << std::endl;
+	std::cout << "2. Автоматический ввод матриц" << std::endl;
+	std::cout << "3. Показать матрицы" << std::endl;
+	std::cout << "4. Найти пересечение элементов" << std::endl;
+	std::cout << "5. Найти объединение элементов" << std::endl;
+	std::cout << "6. Выход" << std::endl;
+	std::cout << "====================================" << std::endl;
+	std::cout << "Выберите опцию: ";
 }
