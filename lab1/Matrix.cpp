@@ -55,7 +55,7 @@ void Matrix::fillMatrixAuto(int minVal, int maxVal) {
 	}
 }
 
-void Matrix::printMatrix() {
+void Matrix::printMatrix() const {
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
@@ -66,7 +66,7 @@ void Matrix::printMatrix() {
 	}
 }
 
-vector<int> Matrix::getAllElements () {
+vector<int> Matrix::getAllElements() const {
 	vector<int> elements;
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++)
