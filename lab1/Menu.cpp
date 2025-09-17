@@ -5,11 +5,9 @@ void menu() {
     setlocale(0, "rus");
 
     int choice;
-    int rows;
     int cols;
     Matrix* matr1 = nullptr;
     Matrix* matr2 = nullptr;
-
     do {
         displayMenu();
         cin >> choice;
@@ -51,19 +49,19 @@ void menu() {
     if (matr2 != nullptr) delete matr2;
 }
 
-// Helper functions
 void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill) {
     if (matr1 != nullptr) delete matr1;
     if (matr2 != nullptr) delete matr2;
 
-    int rows, cols;
+    int rows1, cols1, rows2, cols2;
+
     cout << "¬ведите размер первой матрицы (строки столбцы): ";
-    cin >> rows >> cols;
-    matr1 = new Matrix(rows, cols);
+    cin >> rows1 >> cols1;
+    matr1 = new Matrix(rows1, cols1);
 
     cout << "¬ведите размер второй матрицы (строки столбцы): ";
-    cin >> rows >> cols;
-    matr2 = new Matrix(rows, cols);
+    cin >> rows2 >> cols2;
+    matr2 = new Matrix(rows2, cols2);
 
     if (autoFill) {
         int minVal, maxVal;
