@@ -102,7 +102,7 @@ void handleMatrixDisplay(const Matrix* matr1, const Matrix* matr2) {
     }
 }
 
-void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, const string& operation) {
+void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, string& operation) {
     if (matr1 != nullptr && matr2 != nullptr) {
         vector<int> result;
         if (operation == "intersection") {
