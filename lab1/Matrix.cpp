@@ -1,12 +1,11 @@
 #include "Matrix.h"
 
-Matrix::Matrix(int r, int c) : rows(r), cols(c), data(nullptr)
-{
+Matrix::Matrix(int r, int c) : rows(r), cols(c) {
     if (rows > 0 && cols > 0) {
         data = new int* [rows];
         for (int i = 0; i < rows; i++)
         {
-            data[i] = new int[cols](); // Инициализация нулями
+            data[i] = new int[cols](); 
         }
     }
 }
@@ -15,23 +14,22 @@ Matrix::~Matrix() {
     clear();
 }
 
-// Конструктор копирования
-Matrix::Matrix(const Matrix& other) : rows(other.rows), cols(other.cols), data(nullptr)
+
+Matrix::Matrix(const Matrix& other) : rows(other.rows), cols(other.cols)  
 {
     copyFrom(other);
 }
 
-// Конструктор перемещения
+
 Matrix::Matrix(Matrix&& other) noexcept
-    : rows(other.rows), cols(other.cols), data(other.data)
+    : rows(other.rows), cols(other.cols), data(other.data) 
 {
-    // Обнуляем указатели у исходного объекта
+    
     other.rows = 0;
     other.cols = 0;
     other.data = nullptr;
 }
 
-// Оператор присваивания копированием
 Matrix& Matrix::operator=(const Matrix& other) {
     if (this != &other) {
         clear();
@@ -42,16 +40,13 @@ Matrix& Matrix::operator=(const Matrix& other) {
     return *this;
 }
 
-// Оператор присваивания перемещением
 Matrix& Matrix::operator=(Matrix&& other) noexcept {
     if (this != &other) {
         clear();
-        // Перемещаем ресурсы
         rows = other.rows;
         cols = other.cols;
         data = other.data;
 
-        // Обнуляем исходный объект
         other.rows = 0;
         other.cols = 0;
         other.data = nullptr;

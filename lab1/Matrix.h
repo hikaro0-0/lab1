@@ -13,25 +13,14 @@ using namespace std;
 class Matrix {
     int rows;
     int cols;
-    int** data;
+    int** data = nullptr;  
 
 public:
-    // Конструктор
     Matrix(int r, int c);
-
-    // Деструктор (правило пяти)
     ~Matrix();
-
-    // Конструктор копирования (правило пяти)
     Matrix(const Matrix& other);
-
-    // Конструктор перемещения (правило пяти)
     Matrix(Matrix&& other) noexcept;
-
-    // Оператор присваивания копированием (правило пяти)
     Matrix& operator=(const Matrix& other);
-
-    // Оператор присваивания перемещением (правило пяти)
     Matrix& operator=(Matrix&& other) noexcept;
 
     void fillMatrixManual();
