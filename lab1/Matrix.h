@@ -39,4 +39,8 @@ private:
     void copyFrom(const Matrix& other);
 };
 
+void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill);
+void handleMatrixDisplay(Matrix* matr1, Matrix* matr2);
+void handleMatrixOperation(Matrix* matr1, Matrix* matr2, const string& operation);
+
 #endif
