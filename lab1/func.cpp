@@ -11,7 +11,7 @@ void waitAndClear() {
 	clearScreen();
 }
 
-void printVector(vector<int>& vec, string title) {
+void printVector(const vector<int>& vec, const string title) {
 	cout << title << ": ";
 	if (vec.empty()) {
 		cout << "Пусто";
