@@ -26,7 +26,7 @@ void printVector(vector<int>& vec, string title) {
 
 void displayMenu() {
 	cout << "====================================" << endl;
-	cout << "           ÌÅÍÞ ÏÐÎÃÐÀÌÌÛ" << endl;
+	cout << "          ÌÅÍÞ ÏÐÎÃÐÀÌÌÛ" << endl;
 	cout << "====================================" << endl;
 	cout << "1. Ðó÷íîé ââîä ìàòðèö" << endl;
 	cout << "2. Àâòîìàòè÷åñêèé ââîä ìàòðèö" << endl;

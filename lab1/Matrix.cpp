@@ -17,6 +17,20 @@ Matrix::~Matrix() {
 	delete[] data;
 }
 
+Matrix::Matrix(const Matrix& other) : rows(other.rows), cols(other.cols)
+{
+	data = new int* [rows];
+	for (int i = 0; i < rows; i++)
+	{
+		data[i] = new int[cols];
+		for (int j = 0; j < cols; j++)
+		{
+			data[i][j] = other.data[i][j];
+		}
+	}
+}
+
+
 void Matrix::fillMatrixManual() {
 	cout << "Заполните массив:" << rows << "x" << cols << endl;
 
@@ -30,10 +44,13 @@ void Matrix::fillMatrixManual() {
 }
 
 void Matrix::fillMatrixAuto(int minVal, int maxVal) {
-	cout << "Автоматическое заполнение матрицы " << rows << "x" << cols << endl;
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_int_distribution<int> dist(minVal, maxVal);
+
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			data[i][j] = minVal + rand() % (maxVal - minVal + 1);
+			data[i][j] = dist(gen);
 		}
 	}
 }
@@ -49,7 +66,7 @@ void Matrix::printMatrix() {
 	}
 }
 
-vector<int> Matrix::getAllElements() {
+vector<int> Matrix::getAllElements () {
 	vector<int> elements;
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++)

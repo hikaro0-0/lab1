@@ -3,7 +3,6 @@
 
 void menu() {
 	setlocale(0, "rus");
-	srand(time(0));
 
 	int choice;
 	int rows, cols;
