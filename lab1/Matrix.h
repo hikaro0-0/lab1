@@ -9,8 +9,6 @@
 #include <locale>
 #include <random>
 
-//using namespace std;
-
 class Matrix {
     int rows;
     int cols;
