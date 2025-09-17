@@ -5,7 +5,6 @@ void menu() {
     setlocale(0, "rus");
 
     int choice;
-    int cols;
     Matrix* matr1 = nullptr;
     Matrix* matr2 = nullptr;
     do {
