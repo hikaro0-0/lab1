@@ -66,7 +66,8 @@ void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill) {
     matr2 = new Matrix(rows2, cols2);
 
     if (autoFill) {
-        int minVal, maxVal;
+        int minVal;
+        int maxVal;
         cout << "¬ведите минимальное значение: ";
         cin >> minVal;
         cout << "¬ведите максимальное значение: ";
@@ -85,7 +86,7 @@ void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill) {
     waitAndClear();
 }
 
-void handleMatrixDisplay(Matrix* matr1, Matrix* matr2) {
+void handleMatrixDisplay(const Matrix* matr1, const Matrix* matr2) {
     if (matr1 != nullptr && matr2 != nullptr) {
         cout << "ѕерва€ матрица:" << endl;
         matr1->printMatrix();
@@ -101,7 +102,7 @@ void handleMatrixDisplay(Matrix* matr1, Matrix* matr2) {
     }
 }
 
-void handleMatrixOperation(Matrix* matr1, Matrix* matr2, const string& operation) {
+void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, const string& operation) {
     if (matr1 != nullptr && matr2 != nullptr) {
         vector<int> result;
         if (operation == "intersection") {
