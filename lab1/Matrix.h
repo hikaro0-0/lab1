@@ -2,9 +2,7 @@
 #define MATRIX_H
 
 #include <iostream>
-#include <string>
 #include <vector>
-#include <algorithm>
 #include <set>
 #include <locale>
 #include <random>
@@ -23,7 +21,7 @@ public:
     Matrix& operator=(Matrix&& other) noexcept;
 
     void fillMatrixManual();
-    void fillMatrixAuto(int minVal = 0, int maxVal = 100);
+    void fillMatrixAuto(int minVal, int maxVal);
     void printMatrix() const;
     std::vector<int> getAllElements() const;
     static std::vector<int> Matr_Intersection(const Matrix& matr1, const Matrix& matr2);
@@ -38,8 +36,4 @@ private:
     void copyFrom(const Matrix& other);
 };
 
-void handleMatrixCreation(Matrix*& matr1, Matrix*& matr2, bool autoFill);
-void handleMatrixDisplay(const Matrix* matr1, const Matrix* matr2);
-void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, const std::string& operation);
-void handleMatrixOperation(const Matrix* matr1, const Matrix* matr2, const char* operation);
 #endif
